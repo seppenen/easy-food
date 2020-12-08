@@ -64,7 +64,7 @@ export default function Allergic() {
       <CardContent style={{minHeight: '1vh',}}>
        
         <Typography style={{fontSize: '20px',}} variant="subtitle1" component="h2">
-        <Convert  text="Ты предпочитаешь здоровое пищу?" language={userData.lang}/> 
+        <Convert  text="Haluatko syödä terveellisesti?" language={userData.lang}/> 
 
         </Typography>
        
@@ -72,7 +72,7 @@ export default function Allergic() {
         
       </CardContent>
       <CardActions style={{justifyContent: 'center'}}>
-      <Button onClick={()=> setUserData({...userData, healthy:true})} style={{borderRadius: 50,marginRight:'10px', background: 'linear-gradient(145deg, rgba(134,44,120) 1%, rgba(200,38,128) 10%)', color:'#fff'}}  size="medium">    <Convert  text="I am" language={userData.lang}/> 
+      <Button onClick={()=> setUserData({...userData, healthy:true})} style={{borderRadius: 50,marginRight:'10px', background: 'linear-gradient(145deg, rgba(134,44,120) 1%, rgba(200,38,128) 10%)', color:'#fff'}}  size="medium">    <Convert  text="Kyllä" language={userData.lang}/> 
 </Button>
         <Button onClick={()=> setUserData({...userData, healthy:false})} style={{borderRadius: 50,marginLeft:'10px',background: 'linear-gradient(145deg, rgba(134,44,120) 1%, rgba(200,38,128) 1%)', color:'#fff'}}  size="medium"><Convert  text="No" language={userData.lang}/> </Button>
         

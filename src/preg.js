@@ -74,7 +74,7 @@ export default function Preg() {
       </CardContent>
       <CardActions style={{justifyContent: 'center'}}>
         
-      <Button onClick={()=> setUserData({...userData, preg:true})} style={{borderRadius: 50,marginRight:'10px', background: 'linear-gradient(145deg, rgba(134,44,120) 1%, rgba(200,38,128) 10%)', color:'#fff'}}  size="medium">    <Convert  text="I am" language={userData.lang}/> 
+      <Button onClick={()=> setUserData({...userData, preg:true})} style={{borderRadius: 50,marginRight:'10px', background: 'linear-gradient(145deg, rgba(134,44,120) 1%, rgba(200,38,128) 10%)', color:'#fff'}}  size="medium">    <Convert  text="Kyllä" language={userData.lang}/> 
 </Button>
         <Button onClick={()=> setUserData({...userData, preg:false})} style={{borderRadius: 50,marginLeft:'10px',background: 'linear-gradient(145deg, rgba(134,44,120) 1%, rgba(200,38,128) 1%)', color:'#fff'}}  size="medium"><Convert  text="No" language={userData.lang}/> </Button>
         

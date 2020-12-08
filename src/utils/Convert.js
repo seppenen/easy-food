@@ -26,7 +26,7 @@ const Convert = ({ text, language }) => {
       .catch((err) => {
         console.log('rest api error', err);
       });
-  }, []);
+  }, [text, language]);
 
   return convertedText;
 };

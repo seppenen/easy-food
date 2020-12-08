@@ -24,15 +24,15 @@ function App() {
    const [foodData,setFoodData]=useState([
     {
       id:0,
-      barCode:'77708287',
+      barCode:'77708282',
       title:'Shrimps and Chorizo Paella',
       url:'./images/paella.jpg',
       supplier:'El Biance' ,
       headline:'This  paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like. ',
       vegan:false,
-      healthy:true,
-      preg:true,
-      category:['vege'],
+      healthy:false,
+      preg:false,
+      category:['sea'],
       sponsored:true,
       nutrition :[
         {
@@ -50,7 +50,7 @@ function App() {
     },
     {
       id:1,
-      barCode:'77216230',
+      barCode:'77708287',
       title:'Spinat pasta ',
       url:'./images/maito.jpg',
       supplier:'Barilla' ,
@@ -58,7 +58,7 @@ function App() {
       vegan:true,
       healthy:true,
       preg:true,
-      category:['vege','pasta','italia'],
+      category:['vege','pasta'],
       sponsored:true,
       nutrition :[
         {
@@ -76,12 +76,12 @@ function App() {
     },
     {
       id:3,
-      barCode:'77216230',
+      barCode:'77216232',
       title:'Rosemary beef ',
       url:'./images/beef.jpg',
       supplier:'Tamminen' ,
       headline:'Naudan sisäfilee, palmurasva, riisijauho, juustojauhe suola, maitoproteiini, hiivauute, maltodekstriini, valkosipuli, mausteyrtit ja mausteet (mm. persilja), aromi, dekstroosi, sokeri, ja nilviäisiä.',
-      vegan:false,
+      vegan:true,
       healthy:true,
       preg:true,
       category:['meat','beef'],
@@ -127,7 +127,7 @@ function App() {
 }]
     },{
       id:5,
-      barCode:'77216230',
+      barCode:'77216234',
       title:'Sushi box',
       url:'./images/sushi.png',
       supplier:'S-Ryhmä' ,
@@ -135,7 +135,7 @@ function App() {
       vegan:false,
       healthy:true,
       preg:false,
-      category:['healthy','vege'],
+      category:['healthy','vege','sushi'],
       sponsored:true,
       nutrition :[
         {
@@ -161,10 +161,10 @@ function App() {
   const [items, setItems] = useState();
   const [recomended, setRecomended] = useState([]);
   const [userData, setUserData] = useState({
-    vegan: null, 
-    healthy: null, 
-    preg: null, 
-    lang:null
+    vegan: false, 
+    healthy: false, 
+    preg: false, 
+    lang:'fi'
   });
 
   const theme = createMuiTheme({
@@ -194,10 +194,13 @@ function App() {
 
     const filterItems=()=>{
     let result=foodData
-    
-    if(recomended){
+    let tmp=foodData
+
+    if(recomended){ 
+    console.log(recomended)
     recomended.map(row=>{  
       result=result.filter(item => item.id!== row.id)
+    
      console.log(result)
     })
   }
@@ -222,32 +225,47 @@ function App() {
 
     const sortRecomended=()=>{
       console.log("sortRec")
-      let result;
+      let result=[];
+      let temp;
+    
       if(!!recent){
         recent.map((row=>{
           
-          if(row.category.map((el=>{
-             result=foodData.filter(row=>row.category.find(row=>row===el))
-             
+          if(row.category.map((el=>{console.log(el)
+             foodData.filter(row=>(
+              row.category.find(row=>row===el)
+              ))
+              
+              temp=foodData.filter(row=>row.category.find(row=>row===el))
+              temp.map((row=>{
+              result=result.filter(item => item.id!== row.id)
+              result.push(row)
+
+             }))
+
           })));    
-        }
+           }
+        
         ))
       }
-      
+      console.log(result)
       return result
       }
 
+function upDate(){
 
+  setItems(filterItems());
+}
 
 useEffect(()=>{
   setRecomended(sortRecomended());
-},[recent,userData])
+},[recent])
 
 useEffect(()=>{
  
-setItems(filterItems());
+  upDate();
 
-},[recomended,userData])
+},[recomended])
 
 
 
@@ -266,7 +284,8 @@ setItems(filterItems());
       setReaderData,
       foodData,
       setUserData,
-      recomended
+      recomended,
+      upDate
 
       }}> 
     <Switch> 

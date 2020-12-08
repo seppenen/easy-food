@@ -70,9 +70,9 @@ export default function Vegan() {
       </CardContent>
       <CardActions style={{justifyContent: 'center'}}>
         
-        <Button onClick={()=> setUserData({...userData, vegan:true})} style={{borderRadius: 50,marginRight:'10px', background: 'linear-gradient(145deg, rgba(134,44,120) 1%, rgba(200,38,128) 10%)', color:'#fff'}}  size="medium"> <Convert  text="I am" language={userData.lang}/> 
+        <Button onClick={()=> setUserData({...userData, vegan:true})} style={{borderRadius: 50,marginRight:'10px', background: 'linear-gradient(145deg, rgba(134,44,120) 1%, rgba(200,38,128) 10%)', color:'#fff'}}  size="medium"> <Convert  text="Kyllä" language={userData.lang}/> 
 </Button>
-        <Button onClick={()=> setUserData({...userData, vegan:false})} style={{borderRadius: 50,marginLeft:'10px',background: 'linear-gradient(145deg, rgba(134,44,120) 1%, rgba(200,38,128) 1%)', color:'#fff'}}  size="medium"><Convert  text="No" language={userData.lang}/> </Button>
+        <Button onClick={()=> setUserData({...userData, vegan:false})} style={{borderRadius: 50,marginLeft:'10px',background: 'linear-gradient(145deg, rgba(134,44,120) 1%, rgba(200,38,128) 1%)', color:'#fff'}}  size="medium"><Convert  text="Ei" language={userData.lang}/> </Button>
         
       </CardActions>
     </Card>

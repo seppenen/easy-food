@@ -58,7 +58,7 @@ export const Item=(props) =>{
 
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  const {setReaderData,recent,userData}=useContext(Context)
+  const {setReaderData,recent,upDate,userData}=useContext(Context)
 
 
 
@@ -68,6 +68,7 @@ const handleExpandClick = () => {
   };
 
   const back=()=>{
+    upDate();
     setReaderData(false)
 
   }
