@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 export default function ServerModal({isActive, setIsActive}) {
   const classes = useStyles();
   const rootRef = React.useRef(null);
-  const {foodData,Reader,setReaderData}=useContext(Context)
+  const {Reader}=useContext(Context)
   
   return (
     <div className={classes.root} ref={rootRef}>

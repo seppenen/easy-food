@@ -1,20 +1,19 @@
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Convert = ({ text, language }) => {
   const [convertedText, setConvertedText] = useState('');
 
   useEffect(() => {
-    const response = axios
-      .post(
+   axios.post(
         'https://translation.googleapis.com/language/translate/v2',
         {},
         {
           params: {
             q: text,
             target: language,
-            key: ''
+            key: 'AIzaSyCN_UTwjM3djfS7Nt7zNpgXedigC2pJ_8g'
           }
         }
       )

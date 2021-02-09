@@ -1,9 +1,9 @@
 
-import React,{useState,useContext} from 'react';
+import React,{useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import {Context} from './context/dataObj'
-import Card from '@material-ui/core/Card';
+
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
@@ -20,10 +20,10 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Convert from './utils/Convert'
 import {Nutrition} from './nutrition'
 import DrawerMUI from './nav/DrawerMUI'
-import DrawerMUIBottom from './nav/DrawerMUIBottom'
+
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import {Link} from 'react-router-dom';
-import {useParams} from 'react-router';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     zIndex:-1,
@@ -53,12 +53,12 @@ const useStyles = makeStyles((theme) => ({
 
 export const Item=(props) =>{
 
-    let { id } = useParams();    
+  /*   let { id } = useParams();    */ 
 
 
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  const {setReaderData,recent,upDate,userData}=useContext(Context)
+  const {setReaderData,userData}=useContext(Context)
 
 
 
@@ -68,7 +68,7 @@ const handleExpandClick = () => {
   };
 
   const back=()=>{
-    upDate();
+    
     setReaderData(false)
 
   }

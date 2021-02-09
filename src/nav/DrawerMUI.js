@@ -9,7 +9,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import HomeIcon from '@material-ui/icons/Home';
+
 import MenuIcon from '@material-ui/icons/Menu';
 import {Link} from 'react-router-dom';
 import TuneIcon from '@material-ui/icons/Tune';
@@ -46,10 +46,10 @@ const handleClose = () => {
   setOpen(false); 
 }
 
-const [value, setValue] = useState(0);
-    const handleChange = (event, val) => {
+const [value ] = useState(0);
+   /*  const handleChange = (event, val) => {
         setValue(val);
-      }
+      } */
 
   return (
     <div style={{  marginBottom:'60px'}}>

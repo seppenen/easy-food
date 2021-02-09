@@ -1,4 +1,4 @@
-import React,{useState,useContext} from 'react';
+import React,{useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import {Context} from './context/dataObj'
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Recomended(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
-  const {userData,foodData,Reader,setReaderData}=useContext(Context)
+  const {userData}=useContext(Context)
 
 
   const handleExpandClick = () => {

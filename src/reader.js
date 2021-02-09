@@ -4,8 +4,7 @@ import BarcodeScannerComponent from "react-webcam-barcode-scanner";
 import {Context} from './context/dataObj'
 import Grid from '@material-ui/core/Grid';
 
-import { BrowserMultiFormatReader, Result } from '@zxing/library'
-import Webcam from 'react-webcam'
+
 export const Reader=({setIsActive})=> {
 
   const {recent,setRecent,foodData,setReaderData}=useContext(Context)

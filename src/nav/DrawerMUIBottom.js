@@ -9,12 +9,10 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import HomeIcon from '@material-ui/icons/Home';
-import MenuIcon from '@material-ui/icons/Menu';
+
 import lightBlue from '@material-ui/core/colors/lightBlue';
 import Fab from '@material-ui/core/Fab';
-import {Link} from 'react-router-dom';
-import HistoryIcon from '@material-ui/icons/History';
+
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ListIcon from '@material-ui/icons/List';
@@ -62,8 +60,6 @@ function DrawerMUI ({isActive, setIsActive}) {
 
 const classes = useStyles();
 const [open, setOpen] = useState(false);
-const {recent}=useContext(Context)
-
 
 
 const handleOpen = () => { 
@@ -79,11 +75,11 @@ const handleCamOpen = () => {
   setIsActive(!isActive)
 }
 
-const [value, setValue] = useState(0);
-    const handleChange = (event, val) => {
+const [value] = useState(0);
+    /* const handleChange = (event, val) => {
         setValue(val);
-      }
-      const {userData,foodData,Reader,setReaderData}=useContext(Context)
+      } */
+      const {userData}=useContext(Context)
 
 
 

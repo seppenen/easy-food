@@ -1,15 +1,15 @@
-import React, {useState, useEffect,useContext} from 'react';
+import React, {useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
+
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+
 import {Context} from './context/dataObj'
-import InputLabel from '@material-ui/core/InputLabel';
+
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
@@ -105,9 +105,7 @@ export default function Lang() {
           
           onChange={(e)=> setUserData({...userData, lang:e.target.value})}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
+          
           <MenuItem value="FI">Finnish</MenuItem>
           <MenuItem value="SV">Swedish </MenuItem>
           <MenuItem value="EN">English</MenuItem>

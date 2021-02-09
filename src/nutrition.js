@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, {useContext } from 'react';
 import './nutrition.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -7,7 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+
 import Convert from './utils/Convert'
 import {Context} from './context/dataObj'
 
@@ -22,25 +22,18 @@ const useStyles = makeStyles({
     },
   });
   
-  function createData(name, val, ) {
+  /* function createData(name, val, ) {
     return { name, val };
-  }
+  } */
   
-  const rows = [
-    createData('Calories', 159),
-    createData('Saturated Fat ', 237),
-    createData('Trans Fat', 262),
-    createData('Cholesterol', 305),
-    createData('Sugars',  16.0),
-    createData('Protein',  16.0),
-  ];
+  
 
   
 export const Nutrition=(props)=>{
-    const {userData,foodData,Reader,setReaderData}=useContext(Context)
+    const {userData}=useContext(Context)
 
     const classes = useStyles();
- 
+    console.log(props)
 return (
 <>
 <section className="performance-facts">
@@ -69,15 +62,15 @@ return (
         <TableBody>
   
           {props.row.nutrition.map((el) => (
-
+              
             <TableRow key={el.key}>
               <TableCell component="th" scope="row">
             {/* <Convert  text={el.find(el => el.key === "Calories")["key"]} language={userData.lang}/> */}
-                
+            
                 <Convert  text={el["key"]} language={userData.lang}/>
 
               </TableCell>
-              <TableCell align="right">{el.val}</TableCell>
+              <TableCell align="right">{el.value}</TableCell>
 
             </TableRow>
           ))}
