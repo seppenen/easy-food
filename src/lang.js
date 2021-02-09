@@ -102,7 +102,7 @@ export default function Lang() {
           open={open}
           onClose={handleClose}
           onOpen={handleOpen}
-          
+          defaultValue=""
           onChange={(e)=> setUserData({...userData, lang:e.target.value})}
         >
           
