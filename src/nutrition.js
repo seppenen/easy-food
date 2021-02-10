@@ -11,10 +11,6 @@ import TableRow from '@material-ui/core/TableRow';
 import Convert from './utils/Convert'
 import {Context} from './context/dataObj'
 
-
-
-
-
 const useStyles = makeStyles({
     table: {
       width: '100%',

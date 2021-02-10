@@ -1,5 +1,11 @@
 {
     "staticWebApps.appSubpath": "/",
     "staticWebApps.apiSubpath": "api",
-    "staticWebApps.outputSubpath": "build"
+    "staticWebApps.outputSubpath": "build",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/db2d44c7-f429-4da2-8a7e-cf58fed130e4/resourceGroups/dev-test/providers/Microsoft.Web/sites/dev-test-app2",
+    "appService.deploySubpath": "."
 }
